@@ -14,10 +14,10 @@ class Result extends StatelessWidget {
     String msg = '';
     Widget img;
 
-    if (0 <= count && count <= 3) {
+    if (0 <= count && count <= 2) {
       msg = 'Темная сторона\n не для тебя, дружок.';
       img = Image.asset('assets/images/bad.png');
-    } else if ((4 <= count && count <= 7)) {
+    } else if ((3 <= count && count <= 4)) {
       msg = 'Совсем чуть-чуть до цели';
       img = Image.asset('assets/images/norm.png');
     } else {
