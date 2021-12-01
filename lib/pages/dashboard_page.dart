@@ -272,3 +272,12 @@ class FirstRow extends StatelessWidget {
     );
   }
 }
+
+class Bir extends StatelessWidget {
+  const Bir({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
