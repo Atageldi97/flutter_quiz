@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'pages/home_page.dart';
+import 'pages/dashboard_page.dart';
 
-void main()=>runApp(Quiz());
+void main() => runApp(Quiz());
 
 class Quiz extends StatelessWidget {
   const Quiz({Key? key}) : super(key: key);
@@ -14,8 +14,7 @@ class Quiz extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Quiz App',
       theme: ThemeData(primaryColor: Colors.green),
-
-      home: HomePage(),
+      home: DashboardPage(),
     );
   }
 }

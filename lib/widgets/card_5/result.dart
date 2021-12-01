@@ -14,10 +14,10 @@ class Result extends StatelessWidget {
     String msg = '';
     Widget img;
 
-    if (0 <= count && count <= 2) {
+    if (0 <= count && count <= 5) {
       msg = 'Темная сторона\n не для тебя, дружок.';
       img = Image.asset('assets/images/bad.png');
-    } else if ((3 <= count && count <= 4)) {
+    } else if ((6 <= count && count <= 9)) {
       msg = 'Совсем чуть-чуть до цели';
       img = Image.asset('assets/images/norm.png');
     } else {
@@ -61,17 +61,25 @@ class Result extends StatelessWidget {
           ),
           Text(
             'Верно ответили на $count из $total',
-            style:
-                TextStyle(fontFamily: 'Georgia', fontWeight: FontWeight.w800, fontSize: 15),
+            style: const TextStyle(
+                fontFamily: 'Georgia',
+                fontWeight: FontWeight.w800,
+                fontSize: 15),
           ),
           const Divider(
             color: Colors.white,
           ),
+          // ignore: deprecated_member_use
           FlatButton(
-            child: const Text('Пройти еще раз', style:
-            TextStyle(fontFamily: 'Georgia', fontWeight: FontWeight.w800, fontSize: 18),),
+            child: const Text(
+              'Пройти еще раз',
+              style: TextStyle(
+                  fontFamily: 'Georgia',
+                  fontWeight: FontWeight.w800,
+                  fontSize: 18),
+            ),
             onPressed: onClearState,
-            color: Color(0xffb9acf6),
+            color: const Color(0xffb9acf6),
           )
         ],
       ),

@@ -1,9 +1,9 @@
 import 'package:first_quiz/const/constants.dart';
 import 'package:first_quiz/models/quations.dart';
-import 'package:first_quiz/widgets/answer.dart';
-import 'package:first_quiz/widgets/progress_bar.dart';
-import 'package:first_quiz/widgets/quiz.dart';
-import 'package:first_quiz/widgets/result.dart';
+import 'package:first_quiz/widgets/card_5/progress_bar.dart';
+import 'package:first_quiz/widgets/card_5/result.dart';
+import 'package:first_quiz/widgets/card_5/quiz.dart';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -48,37 +48,33 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackGroundColor,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
-        title: const Text(
-          'Quiz App',
-          style: TextStyle(
-              color: Colors.black, fontFamily: 'Georgia', fontSize: 22.0),
-        ),
-      ),
       body: Container(
         constraints: const BoxConstraints.expand(),
         decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('assets/images/bg.jpg'), fit: BoxFit.cover)),
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              ProgressBar(
-                icons: _icons,
-                count: _questionIndex,
-                total: data.questions.length,
-              ),
-              _questionIndex < data.questions.length
-              ? Quiz(
-                index: _questionIndex,
-                questionData: data,
-                onChangeAnswer: _onChangeAnswer,
-              ): Result(count: _countResult, total: data.questions.length, onClearState: _clearState),
-
-
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(top: 15.0),
+            child: Column(
+              children: [
+                ProgressBar(
+                  icons: _icons,
+                  count: _questionIndex,
+                  total: data.questions.length,
+                ),
+                _questionIndex < data.questions.length
+                    ? Quiz(
+                        index: _questionIndex,
+                        questionData: data,
+                        onChangeAnswer: _onChangeAnswer,
+                      )
+                    : Result(
+                        count: _countResult,
+                        total: data.questions.length,
+                        onClearState: _clearState),
+              ],
+            ),
           ),
         ),
       ),
